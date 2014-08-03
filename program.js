@@ -59,7 +59,7 @@ var sprintf = require('sprintf');
 var lines = txt.split('\n');
 lines.forEach(function (line, index) {
   if (index % 5 === 0) {
-    console.log(printf('%3d %s', index, line));
+    console.log(sprintf('%3d %s', index, line));
   } else {
     console.log('    ' + line);
   }
