@@ -33,23 +33,25 @@ console.log(fileAdd)
 */
 
 /*
-var domify = require('domify')
-var html = '<div>Hello <span class="name"></span>!</div>'
+var domify = require('domify');
+var html = '<div>Hello <span class="name"></span>!</div>';
 
-module.exports = widget;
+module.exports = Widget;
 
-function widget() {
-  this.element = domify(html)
-  if (!(this instanceof widget)) return new widget;
+function Widget () {
+  if (!(this instanceof Widget)) return new Widget();
+  this.element = domify(html);
 }
-widget.prototype.setName = function (str) {
-  var span = this.element.querySelector('.name')
-  span.textContent(str)
-}
-widget.prototype.appendTo = function (target) {
-  target.appendChild(this.element)
-}
+
+Widget.prototype.setName = function (name) {
+  this.element.querySelector('.name').textContent = name;
+};
+
+Widget.prototype.appendTo = function (target) {
+  target.appendChild(this.element);
+};
 */
+
 
 var fs = require('fs');
 var txt = fs.readFileSync(__dirname +
