@@ -32,35 +32,19 @@ var fileAdd = url.resolve(add, queryObj.file)
 console.log(fileAdd)
 */
 
-/*
-var domify = require('domify')
-var html = '<div>Hello <span class="name"></span>!</div>'
+var domify = require('domify');
+var html = '<div>Hello <span class="name"></span>!</div>';
 
-module.exports = widget;
+module.exports = Widget;
 
-function widget() {
-  this.element = domify(html)
-  if (!(this instanceof widget)) return new widget;
+function Widget() {
+  this.element = domify(html);
+  if (!(this instanceof Widget)) return new Widget;
 }
-widget.prototype.setName = function (str) {
-  var span = this.element.querySelector('.name')
-  span.textContent(str)
+Widget.prototype.setName = function (str) {
+  var span = this.element.querySelector('.name');
+  span.textContent(str);
 }
-widget.prototype.appendTo = function (target) {
-  target.appendChild(this.element)
+Widget.prototype.appendTo = function (target) {
+  target.appendChild(this.element);
 }
-*/
-
-var fs = require('fs');
-var txt = fs.readFileSync(__dirname +
-  '/../../problems/using_transforms/wake.txt', 'utf8');
-var sprintf = require('sprintf');
-
-var lines = txt.split('\n');
-lines.forEach(function (line, index) {
-  if (index % 5 === 0) {
-    console.log(sprintf('%3d %s', index, line));
-  } else {
-    console.log('    ' + line);
-  }
-});
